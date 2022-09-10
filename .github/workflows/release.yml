@@ -8,13 +8,6 @@ on:
   workflow_dispatch:    
 
 jobs:
-  validate_release:
-    name: Validate release
-    runs-on: [ "ubuntu-20.04" ]
-    outputs:
-      version: ${{ steps.version_check.outputs.version }}
-      version_dev: ${{ steps.version_check.outputs.version_dev }}
-      matrix: ${{ steps.generate_matrix.outputs.result }}
     steps:
       - uses: actions/checkout@v3
       - name: Validate version
