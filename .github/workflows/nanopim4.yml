@@ -38,7 +38,8 @@ jobs:
         allowUpdates: true
         replacesArtifacts: true  
         
-        tag: ${{ env.FILE_NAME }}
+        tag: Nanopim4
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
           * Nanopim4
+          
