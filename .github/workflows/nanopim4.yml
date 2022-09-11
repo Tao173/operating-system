@@ -30,12 +30,15 @@ jobs:
     - name: Setup Debug Session 'touch /tmp/keepalivegit'
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') 
       uses: csexton/debugger-action@master
-      
+    - name: zip
+      run: |
+        tar -cjvf images.tar.bz2 ./buildroot/output/images
+        
     - name: Upload files to release
       uses: ncipollo/release-action@v1
       with:
         name: Nanopim4
-        artifacts: ./buildroot/output/images/*
+        artifacts: images.tar.bz2
         allowUpdates: true
         replacesArtifacts: true  
         
