@@ -20,16 +20,17 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
-    - name: Setup Debug Session 'touch /tmp/keepalivegit'
-      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') 
-      uses: csexton/debugger-action@master
+
     - name: Initialization environment
       run: |
         git clone -b 2022.02.x-haos https://github.com/home-assistant/buildroot.git
         cd buildroot
         make friendlyarm_nanopi_m4_defconfig
         make
-
+    - name: Setup Debug Session 'touch /tmp/keepalivegit'
+      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') 
+      uses: csexton/debugger-action@master
+      
     - name: Upload files to release
       uses: ncipollo/release-action@v1
       with:
