@@ -35,7 +35,7 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         name: Nanopim4
-        artifacts: /output/images/*
+        artifacts: ./buildroot/output/images/*
         allowUpdates: true
         replacesArtifacts: true  
         
