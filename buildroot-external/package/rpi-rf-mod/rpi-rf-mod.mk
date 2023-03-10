@@ -9,12 +9,12 @@
 # Codeload URL:
 # https://codeload.github.com/jens-maus/RaspberryMatic/tar.gz/COMMIT
 #
-# Copyright (c) 2018-2022 Jens Maus <mail@jens-maus.de>
+# Copyright (c) 2018-2023 Jens Maus <mail@jens-maus.de>
 # https://github.com/jens-maus/RaspberryMatic/tree/master/buildroot-external/package/rpi-rf-mod
 #
 ################################################################################
 
-RPI_RF_MOD_VERSION = 41a25de861e84d411f92d9139da81f19c857d91e
+RPI_RF_MOD_VERSION = de15b40fe87116c14c810b25d3b5107091e8946b
 RPI_RF_MOD_SITE = $(call github,jens-maus,RaspberryMatic,$(RPI_RF_MOD_VERSION))
 RPI_RF_MOD_LICENSE = Apache-2.0
 RPI_RF_MOD_DEPENDENCIES = host-dtc
@@ -27,13 +27,13 @@ ifeq ($(BR2_PACKAGE_RPI_RF_MOD_DTS_RPI),y)
 else ifeq ($(BR2_PACKAGE_RPI_RF_MOD_DTS_TINKER),y)
   # ASUS Tinkerboard DTS file
   RPI_RF_MOD_DTS_FILE = rpi-rf-mod-tinker
-else ifeq ($(BR2_PACKAGE_RPI_RF_MOD_DTS_ODROID-C4),y)
+else ifeq ($(BR2_PACKAGE_RPI_RF_MOD_DTS_ODROID_C4),y)
   # Odroid C4 DTS file
   RPI_RF_MOD_DTS_FILE = rpi-rf-mod-odroid-c4
-else ifeq ($(BR2_PACKAGE_RPI_RF_MOD_DTS_ODROID-N2),y)
+else ifeq ($(BR2_PACKAGE_RPI_RF_MOD_DTS_ODROID_N2),y)
   # Odroid N2/N2+ DTS file
   RPI_RF_MOD_DTS_FILE = rpi-rf-mod-odroid-n2
-else ifeq ($(BR2_PACKAGE_RPI_RF_MOD_DTS_ODROID-C2),y)
+else ifeq ($(BR2_PACKAGE_RPI_RF_MOD_DTS_ODROID_C2),y)
   # Odroid C2 DTS file
   RPI_RF_MOD_DTS_FILE = rpi-rf-mod-odroid-c2
 endif
